@@ -1,0 +1,18 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "module": "commonjs",
+        "preserveConstEnums": true,
+        "noEmit": false,
+        "outDir": "distServer",
+        "baseUrl": ".",
+        "rootDirs": ["server/"],
+
+        "paths": {
+            "*": [
+                "node_modules/*"
+            ]
+        }
+    },
+    "include": ["server"]
+}
