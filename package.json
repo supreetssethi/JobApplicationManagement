@@ -1,0 +1,27 @@
+{
+  "name": "JobApplicationManagement",
+  "version": "1.0.0",
+  "description": "A job application managament and tracking system for candidates",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/supreetssethi/JobApplicationManagement.git"
+  },
+  "keywords": [],
+  "author": "Supreet Sethi <supreet.s.sethi@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/supreetssethi/JobApplicationManagement/issues"
+  },
+  "homepage": "https://github.com/supreetssethi/JobApplicationManagement#readme",
+  "dependencies": {
+    "next": "^10.2.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
