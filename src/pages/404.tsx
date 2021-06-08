@@ -1,15 +1,4 @@
-import { NextPageContext } from "next";
-
-const PageNotFound = ({ statusCode }) => {
-  return (
-    <p>
-      {statusCode
-        ? `An error ${statusCode} occurred on server`
-        : "An error occurred on client"}
-    </p>
-  );
-};
-
-
-
-export default PageNotFound;
+// pages/404.js
+export default function Custom404() {
+  return <h1>404 - Page Not Found</h1>
+}

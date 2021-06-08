@@ -1,18 +1,19 @@
-import { NextPageContext } from "next";
+import Error from 'next/error'
 
-const Error = ({ statusCode }) => {
-  return (
-    <p>
-      {statusCode
-        ? `An error ${statusCode} occurred on server`
-        : "An error occurred on client"}
-    </p>
-  );
-};
+export async function getServerSideProps() {
+  const res = await fetch('https://api.github.com/repos/vercel/next.js')
+  const errorCode = res.ok ? false : res.statusCode
+  const json = await res.json()
 
-Error.getInitialProps = ({ res, err }: NextPageContext) => {
-  const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
-  return { statusCode };
-};
+  return {
+    props: { errorCode, stars: json.stargazers_count },
+  }
+}
 
-export default Error;
+export default function Page({ errorCode, stars }) {
+  if (errorCode) {
+    return <Error statusCode={errorCode} />
+  }
+
+  return <div>Next stars: {stars}</div>
+}
