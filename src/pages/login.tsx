@@ -5,6 +5,8 @@ import PublicLayoutForm from "../layouts/PublicLayoutForm";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import { LoginForm } from "../types";
+import router from "next/router";
+import { strictUnAuthRoute } from "../HOC/strictUnauth";
 
 let signInInitialFormData = {
   email: "",
@@ -28,12 +30,13 @@ const Login: FC = () => {
         "Content-Type": "application/json",
         "Accept-Encoding": "application/job",
       },
+      credentials: "include",
       body: JSON.stringify(submitFormData), // body data type must match "Content-Type" header
     });
     setIsLoading(false);
+    router.push("/");
     if (response.ok) {
       let data = await response.json();
-      console.log(data);
     } else {
       let err = await response.text();
       setError(err);
@@ -98,4 +101,4 @@ const Login: FC = () => {
   );
 };
 
-export default Login;
+export default strictUnAuthRoute(Login);

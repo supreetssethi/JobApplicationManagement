@@ -18,28 +18,6 @@ const ForgotPassword: FC = () => {
     setError(null);
     event.preventDefault();
     alert("forgot password submit");
-
-    // let submitFormData = {
-    //   email: formData.email,
-    //   password: formData.password,
-    // };
-    // setIsLoading(true);
-    // let response = await fetch("http://localhost:8000/login", {
-    //   method: "POST", // *GET, POST, PUT, DELETE, etc.
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     "Accept-Encoding": "application/job",
-    //   },
-    //   body: JSON.stringify(submitFormData), // body data type must match "Content-Type" header
-    // });
-    // setIsLoading(false);
-    // if (response.ok) {
-    //   let data = await response.json();
-    //   console.log(data);
-    // } else {
-    //   let err = await response.text();
-    //   setError(err);
-    // }
   };
 
   let handleChange = (event) => {

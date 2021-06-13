@@ -1,5 +1,5 @@
 import routes from "../constants/routes";
-import { useAuthContext } from "../contexts";
+// import { useAuthContext } from "../contexts";
 
 //check if you are on the client (browser) or server
 const isBrowser = () => typeof window !== "undefined";

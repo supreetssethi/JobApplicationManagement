@@ -1,7 +1,7 @@
 // import App from "next/app";
 import type { AppProps /*, AppContext */ } from "next/app";
 import { useEffect } from "react";
-import ProtectedRoute from "../helper/ProtectedRoute";
+// import ProtectedRoute from "../helper/ProtectedRoute";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   useEffect(() => {

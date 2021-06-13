@@ -1,9 +1,12 @@
 import React, { FC } from "react";
+import { privateRoute } from "../HOC/privateRoute";
 
-const Profile: FC = () => (
-  <>
-    <p>Profile page</p>
-  </>
-);
+const Profile: FC = (props) => {
+  return (
+    <>
+      <p>Profile page</p>
+    </>
+  );
+};
 
-export default Profile;
+export default privateRoute(Profile);

@@ -8,6 +8,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 import { Grid } from "@material-ui/core";
 import { SignUpForm } from "../types";
 import { executePost } from "../lib/api";
+import { strictUnAuthRoute } from "../HOC/strictUnauth";
 
 let signUpInitialFormData = {
   firstName: "",
@@ -39,7 +40,6 @@ const Signup: FC = () => {
     );
     setIsLoading(false);
     if (response.isSuccess) {
-      console.log(response.data);
     } else {
       setError(response.err);
     }
@@ -130,4 +130,4 @@ const Signup: FC = () => {
   );
 };
 
-export default Signup;
+export default strictUnAuthRoute(Signup);

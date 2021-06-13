@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import Head from "next/head";
 import Button from "../components/Button";
+import { privateRoute } from "../HOC/privateRoute";
 
 const index: FC = () => (
   <>
@@ -82,4 +83,4 @@ const index: FC = () => (
   </>
 );
 
-export default index;
+export default privateRoute(index);
