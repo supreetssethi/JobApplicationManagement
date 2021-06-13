@@ -23,13 +23,23 @@
   },
   "homepage": "https://github.com/supreetssethi/JobApplicationManagement#readme",
   "dependencies": {
-    "@types/jest": "^26.0.23",
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/styles": "^4.11.4",
     "next": "^10.2.3",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "ts-jest": "^27.0.3"
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@testing-library/dom": "^7.31.2",
+    "@testing-library/jest-dom": "^5.13.0",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^13.1.9",
+    "@types/enzyme": "^3.10.8",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/jest": "^26.0.23",
+    "@types/material-ui": "^0.21.8",
+    "@types/node": "^15.12.2",
     "@types/react": "^17.0.9",
     "babel-core": "^6.26.3",
     "babel-jest": "^27.0.2",
@@ -37,7 +47,32 @@
     "babel-preset-react": "^6.24.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^27.0.4",
+    "ts-jest": "^27.0.3",
     "typescript": "^4.3.2"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    },
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "testMatch": [
+      "**/__tests__/*.(ts|tsx)"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest.setup.ts"
+    ],
+    "testPathIgnorePatterns": [
+      "./.next/",
+      "./node_modules/"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "tsconfig.jest.json"
+      }
+    }
   }
 }
