@@ -1,7 +1,7 @@
-import React, { FC } from "react";
+import { NextPage } from "next";
 import { privateRoute } from "../HOC/privateRoute";
 
-const Profile: FC = (props) => {
+const Profile: NextPage = (props) => {
   return (
     <>
       <p>Profile page</p>

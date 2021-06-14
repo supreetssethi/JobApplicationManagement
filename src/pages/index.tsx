@@ -1,9 +1,9 @@
-import React, { FC } from "react";
+import { NextPage } from "next";
 import Head from "next/head";
 import Button from "../components/Button";
 import { privateRoute } from "../HOC/privateRoute";
 
-const index: FC = () => (
+const Home: NextPage = () => (
   <>
     <header>
       <b>JobAppTracker</b>
@@ -83,4 +83,7 @@ const index: FC = () => (
   </>
 );
 
-export default privateRoute(index);
+Home.getInitialProps = async (ctx) => {
+  return {};
+};
+export default privateRoute(Home);

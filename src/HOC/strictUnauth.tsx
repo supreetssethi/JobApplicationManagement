@@ -16,7 +16,7 @@ export function strictUnAuthRoute(WrappedComponent: any) {
       const { cookies } = req;
 
       // create AuthToken
-      const token = cookies.Authorization;
+      const token = cookies.Token;
       const auth = new AuthToken(token);
       const initialProps = { auth };
       // if the token is expired, that means the user is no longer (or never was) authenticated

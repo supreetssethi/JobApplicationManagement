@@ -7,6 +7,7 @@ interface ApiReturnInterface {
 }
 const executeApi = async ({ url, options }: ApiCallInterface) => {
   let response = await fetch(url, options);
+  console.log(response.headers["cookies"]);
   if (response.ok) {
     let data = await response.json();
     return <ApiReturnInterface>{

@@ -9,8 +9,8 @@ import router from "next/router";
 import { strictUnAuthRoute } from "../HOC/strictUnauth";
 
 let signInInitialFormData = {
-  email: "",
-  password: "",
+  email: "supreet.s.sethi@gmail.com",
+  password: "suprit12",
 };
 const Login: FC = () => {
   let [formData, setFormData] = useState<LoginForm>(signInInitialFormData);
@@ -34,9 +34,9 @@ const Login: FC = () => {
       body: JSON.stringify(submitFormData), // body data type must match "Content-Type" header
     });
     setIsLoading(false);
-    router.push("/");
     if (response.ok) {
       let data = await response.json();
+      router.push("/");
     } else {
       let err = await response.text();
       setError(err);
