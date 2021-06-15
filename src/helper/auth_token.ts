@@ -1,7 +1,7 @@
 import jwtDecode from "jwt-decode";
 // import router from "next/router";
 
-interface DecodedToken {
+export interface DecodedToken {
   readonly _id: string;
   readonly email: string;
   readonly name: {
@@ -57,6 +57,9 @@ export class AuthToken {
 
   get isValid(): boolean {
     return !this.isExpired;
+  }
+  get user(): DecodedToken {
+    return this.decodedToken;
   }
 
   //   get refreshTokenExpiresAt(): Date {

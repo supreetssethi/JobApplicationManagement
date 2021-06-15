@@ -15,23 +15,32 @@ const Button: FC = ({
   buttonType,
   formName,
   disabled,
+  color,
+  variant,
+  endIcon,
 }: {
   buttonType: ButtonType;
+  color?: string;
+  variant?: string;
+  endIcon?: React.ReactComponentElement;
 }) => {
   if (isLink)
     return (
-      <MUIButton variant="contained" color="primary" href={href}>
+      <MUIButton variant={variant} href={href} color={color} endIcon={endIcon}>
         {children}
       </MUIButton>
     );
   else
     return (
       <MUIButton
+        color={color}
         disabled={disabled}
-        variant="contained"
-        color="primary"
-        onClick={() => onClick}
+        variant={variant}
+        onClick={(e) => {
+          onClick && onClick(e);
+        }}
         form={formName}
+        endIcon={endIcon}
         type={buttonType}
       >
         {children}

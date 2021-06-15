@@ -18,6 +18,7 @@ export function privateRoute(WrappedComponent: any) {
       const token = cookies.Token;
       // const refreshToken = cookies.RefreshToken;
       const auth = new AuthToken(token /*refreshToken*/);
+      // console.log(ctx);
       const initialProps = { auth };
       // if the token is expired, that means the user is no longer (or never was) authenticated
       // and if we allow the request to continue, they will reach a page they should not be at.
@@ -47,7 +48,9 @@ export function privateRoute(WrappedComponent: any) {
       // so we have to reinitialize the authToken class
       //
       // @see https://github.com/zeit/next.js/issues/3536
-      return new AuthToken(this.props.auth.token, this.props.auth.refreshToken);
+      return new AuthToken(
+        this.props.auth.token /*this.props.auth.refreshToken*/
+      );
     }
 
     render() {
